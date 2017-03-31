@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/logic/StorePlace.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/logic/Customer.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/logic/Room.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/logic/Store.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/StorePlaceDao.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/impl/RoomDaoImpl.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/hbms/StorePlace.hbm.xml</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/ProductDao.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/impl/StorePlaceDaoImpl.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/impl/TransactionDaoImpl.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/RoomDao.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/logic/Transaction.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/util/Factory.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/impl/CustomerDaoImpl.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/hbms/Product.hbm.xml</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/store/Store.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/logic/Product.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/CustomerDao.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/impl/StoreDaoImpl.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/impl/ProductDaoImpl.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/StoreDao.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/util/HibernateUtil.java</file>
+            <file>file:/C:/Users/nickolas/Documents/Java_project/Store/src/dao/TransactionDao.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="logic.Transaction" table="Transaction">
+    <id column="id" name="id" type="java.lang.Long">
+      <generator class="increment"/>
+    </id>
+    <property column="product_id" name="productId" type="java.lang.Long"/>
+    <property column="customer_id" name="customerId" type="java.lang.Long"/>
+    <property column="type" name="type" type="java.lang.Boolean"/>
+    <property column="count" name="count" type="java.lang.Integer"/>
+    <property column="date" name="date" type="java.lang.String"/>
+    
+    
+  </class>
+</hibernate-mapping>

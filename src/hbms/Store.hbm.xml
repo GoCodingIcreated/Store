@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="logic.Store" table="Store">
+    <id column="id" name="id" type="java.lang.Long">
+      <generator class="increment"/>
+    </id>
+    <property column="adres" name="adres" type="java.lang.String"/>
+    <set name="rooms" lazy="false">
+        <key column="store_id"/>
+        <one-to-many class="logic.Room"/>
+    </set>
+  </class>
+</hibernate-mapping>
