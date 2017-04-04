@@ -41,4 +41,37 @@ public class CustomerDaoImpl implements CustomerDao
         }
         return customers;
     }
+    public List<Customer> getCustomersByName(String name) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Customer> customers;
+        customers = session.createSQLQuery(
+                "SELECT * FROM Customer WHERE name = :NAME")
+                .addEntity(Customer.class)
+                .setString("NAME", name)
+                .list();
+        
+        session.close();
+        return customers;
+    }
+    public void saveCustomer(Customer customer) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(customer);
+        session.getTransaction().commit();
+        session.close();
+    }
+    public void removeCustomer(Customer customer) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.delete(customer);
+        session.getTransaction().commit();
+        session.close();
+    }
+    public void editCustomer(Customer customer) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.update(customer);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

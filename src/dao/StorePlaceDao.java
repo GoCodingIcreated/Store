@@ -4,12 +4,23 @@
  * and open the template in the editor.
  */
 package dao;
-
+import dao.*;
+import logic.*;
+import java.util.List;
+import java.sql.SQLException;
+import java.sql.Date;
 /**
  *
  * @author nickolas
  */
+
 public interface StorePlaceDao
 {
-    
+    /*public List<StorePlace> getAllStorePlaces() throws SQLException;
+    public List<StorePlace>  getStorePlacesByProduct(Product product) throws SQLException;
+    public List<StorePlace>  getStorePlacesByDate(Date date) throws SQLException;
+    public List<StorePlace>  getStorePlacesByRoom(Room room) throws SQLException;
+    public List<StorePlace>  getStorePlacesByStore(Store store) throws SQLException;
+    public List<StorePlace>  get() throws SQLException;
+    public List<StorePlace>  get() throws SQLException;*/
 }

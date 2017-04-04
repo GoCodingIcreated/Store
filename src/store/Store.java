@@ -16,6 +16,9 @@ import java.util.List;
 import java.sql.SQLException;
 import util.HibernateUtil;
 import java.sql.Timestamp;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
 
 public class Store {
 
@@ -23,12 +26,15 @@ public class Store {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException {
+
         try {
             test1();
             test2();
             test3();
             test4();
             test5();
+            test6();
+            test7();
         }
         catch(Exception ex) {
             System.out.println("ERROR: " + ex);
@@ -108,5 +114,48 @@ public class Store {
             }
         }
         System.out.println("Test5 finished");
+    }
+    public static void test6() throws SQLException {
+        System.out.println("Test6 started");
+        Factory factory = Factory.getInstance();
+        String name = "oldCustomer", nameNew = "newCustomer";
+        Customer customer = new Customer();
+        customer.setName(name);
+        customer.setAdres("adres");
+        customer.setPhone("123123123");
+        factory.getCustomerDao().saveCustomer(customer);
+        List<Customer> customers = factory.getCustomerDao()//.getAllCustomers();
+                                    .getCustomersByName(name);
+        
+        for (Customer cust : customers) {
+            System.out.println(cust.getName() + ", " + cust.getId());
+            cust.setName(nameNew);
+            factory.getCustomerDao().editCustomer(cust);
+        }
+        
+        
+        System.out.println("==========");
+        
+        customers = factory.getCustomerDao().getCustomersByName(nameNew);
+        for (Customer cust : customers) {
+            System.out.println(cust.getName() + ", " + cust.getId());
+            factory.getCustomerDao().removeCustomer(cust);
+        }
+        System.out.println("Test6 finished");
+    }
+    public static void test7() throws SQLException {
+        System.out.println("Test7 started");
+        GregorianCalendar begin = new GregorianCalendar(2017, 0, 27);
+        GregorianCalendar end = new GregorianCalendar(2017, 1, 28);
+        Factory factory = Factory.getInstance();
+        List<Transaction> trans = factory.getTransactionDao()
+                .getTransactionsBetweenDates(begin, end);
+        if (trans == null) {
+            System.out.println("Empty");
+        }
+        for (Transaction tran : trans) {
+            System.out.println(tran.getDate() + ", " + tran.getId());
+        }
+        System.out.println("Test7 finished");
     }
 }

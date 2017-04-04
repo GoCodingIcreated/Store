@@ -15,4 +15,8 @@ public interface CustomerDao
 {
     public void temp();
     public List<Customer> getAllCustomers() throws SQLException;
+    public List<Customer> getCustomersByName(String name) throws SQLException;
+    public void saveCustomer(Customer customer) throws SQLException;
+    public void removeCustomer(Customer customer) throws SQLException;
+    public void editCustomer(Customer customer) throws SQLException;
 }
