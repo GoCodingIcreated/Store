@@ -35,9 +35,11 @@ public class Store {
             test5();
             test6();
             test7();
+            test8();
         }
         catch(Exception ex) {
             System.out.println("ERROR: " + ex);
+            throw ex;
         }
         finally {
             HibernateUtil.getSessionFactory().close();
@@ -157,5 +159,13 @@ public class Store {
             System.out.println(tran.getDate() + ", " + tran.getId());
         }
         System.out.println("Test7 finished");
+    }
+    public static void test8() throws SQLException {
+        System.out.println("Test8 started");
+        Factory factory = Factory.getInstance();
+        Double totalCapacity;
+        totalCapacity = factory.getStoreDao().getTotalCapacity();
+        System.out.println(totalCapacity);
+        System.out.println("Test8 finished");
     }
 }

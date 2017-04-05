@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package dao;
+import java.util.List;
+import logic.*;
+import java.sql.SQLException;
 
 /**
  *
@@ -11,5 +14,10 @@ package dao;
  */
 public interface StoreDao
 {
-    
+    public List<Store> getAllStores() throws SQLException;
+    public List<Store> getStoreByRoom(Room room) throws SQLException;
+    public Double getCapacityByStore(Store store) throws SQLException;
+    public Double getFreeSpaceByStore(Store store) throws SQLException;
+    public Double getTotalCapacity() throws SQLException;
+    public Double getTotalFreeSpace() throws SQLException;
 }
