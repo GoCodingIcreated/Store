@@ -21,24 +21,11 @@ public class CustomerDaoImpl implements CustomerDao
         System.out.println("Hello, world!");
     }
     public List<Customer> getAllCustomers() throws SQLException {
-        List<Customer> customers = new ArrayList<Customer>();
-        Session session = null;
-        try {
-            
-            session = HibernateUtil.getSessionFactory().openSession();
-            
-            customers = session.createCriteria(Customer.class).list();
-            
-        }
-        catch (Exception e) {
-            System.out.println("Error: " + e);
-        }
-        finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-            
-        }
+        List<Customer> customers;
+        Session session;
+        session = HibernateUtil.getSessionFactory().openSession();
+        customers = session.createCriteria(Customer.class).list();
+        session.close();
         return customers;
     }
     public List<Customer> getCustomersByName(String name) throws SQLException {
@@ -63,15 +50,30 @@ public class CustomerDaoImpl implements CustomerDao
     public void removeCustomer(Customer customer) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.delete(customer);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.delete(customer);
+        }
+        catch (Exception e) {
+            throw  e;
+        }
+        finally {
+            session.getTransaction().commit();
+            session.close();
+        }
     }
     public void editCustomer(Customer customer) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(customer);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.update(customer);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            throw e;
+        }
+        finally {
+         
+            session.close();
+        }
     }
 }

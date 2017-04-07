@@ -19,6 +19,27 @@ public class Customer {
     public Customer() {
         
     }
+    public Customer(Long id, String phone, String adres, String name) {
+        this.id = id;
+        this.phone = phone;
+        this.adres = adres;
+        this.name = name;
+    }
+    public Customer(Customer c) {
+        id = c.id;
+        phone = c.phone;
+        adres = c.adres;
+        name = c.name;
+        transactions = c.transactions;
+    }
+    public boolean equals(Object obj) {
+        Customer c = (Customer )obj;
+        return c.id == id && name.equals(c.name) 
+                && c.phone.equals(phone) && c.adres.equals(adres);
+    }
+    public int hashCode() {
+        return (int)(long)id;
+    }
     public Set getTransactions() {
         return transactions;
     }

@@ -84,7 +84,7 @@ public class RoomDaoImpl implements RoomDao
     }
     public Double getFreeSpace(Room room) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Integer usedSpace;
+        Double usedSpace;
         usedSpace = (Double)session.createSQLQuery(
                         "SELECT SUM(stored_place.count)\n" +
                         "FROM Stored_place\n" +
