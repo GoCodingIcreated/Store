@@ -8,7 +8,7 @@ import dao.*;
 import logic.*;
 import java.util.List;
 import java.sql.SQLException;
-import java.sql.Date;
+import java.sql.Timestamp;
 /**
  *
  * @author nickolas
@@ -16,11 +16,10 @@ import java.sql.Date;
 
 public interface StorePlaceDao
 {
-    /*public List<StorePlace> getAllStorePlaces() throws SQLException;
+    public List<StorePlace> getAllStorePlaces() throws SQLException;
     public List<StorePlace>  getStorePlacesByProduct(Product product) throws SQLException;
-    public List<StorePlace>  getStorePlacesByDate(Date date) throws SQLException;
+    public List<StorePlace>  getStorePlacesByDate(Timestamp date) throws SQLException;
     public List<StorePlace>  getStorePlacesByRoom(Room room) throws SQLException;
     public List<StorePlace>  getStorePlacesByStore(Store store) throws SQLException;
-    public List<StorePlace>  get() throws SQLException;
-    public List<StorePlace>  get() throws SQLException;*/
+    public addStorePlace(StorePlace) throws SQLException;
 }

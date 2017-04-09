@@ -22,6 +22,35 @@ public class Product {
     public Product() {
         
     }
+    public Product(Product p) {
+        id = p.id;
+        type = p.type;
+        timestore = p.timestore;
+        name = p.name;
+        about = p.about;
+        transactions = p.transactions;
+        storePlaces = p.storePlaces;
+    }
+    
+    public Product(Long id, String name, Timestamp timestore,
+            String type, String about) {
+        this.id = id;
+        this.type = type;
+        this.timestore = timestore;
+        this.name = name;
+        this.about = about;
+    }
+    public boolean equals(Object obj) {
+        if (obj.getClass() != Product.class) {
+            return false;
+        }
+        Product c = (Product )obj;
+        return c.id == id && name.equals(c.name) 
+                && c.type.equals(type);
+    }
+    public int hashCode() {
+        return (int)(long)id;
+    }
     public Set getTransactions() {
         return transactions;
     }

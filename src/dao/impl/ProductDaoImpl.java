@@ -61,6 +61,7 @@ public class ProductDaoImpl implements ProductDao
         List<Product> products;
         Session session;
         session = HibernateUtil.getSessionFactory().openSession();
+        System.out.println(date.toString());
         products = session.createSQLQuery(
                             "SELECT * FROM product WHERE timestore = :TIME")
                             .addEntity(Product.class)
@@ -104,13 +105,13 @@ public class ProductDaoImpl implements ProductDao
         List<Product> products;
         products = session.createSQLQuery("SELECT p.id, p.name, p.timestore,"
                                 + " p.type, p.about\n"
-                                + "FROM Product P JOIN"
-                                + " transaction T ON p.id = t.product_id JOIN"
+                                + "FROM Product P JOIN "
+                                + " transaction T ON p.id = t.product_id JOIN "
                                 + "customer C ON t.customer_id = c.id\n"
                                 + "WHERE t.product_id = p.id and\n"
                                 + "	t.customer_id = c.id and\n"
-                                + "     t.type = true and"
-                                + "     customer.id = :ID")
+                                + "     t.type = true and "
+                                + "     c.id = :ID")
                                 .addEntity(Product.class)
                                 .setLong("ID", customer.getId())
                                 .list();        
@@ -122,12 +123,12 @@ public class ProductDaoImpl implements ProductDao
         products = session.createSQLQuery("SELECT p.id, p.name, p.timestore,"
                                 + " p.type, p.about\n"
                                 + "FROM Product P JOIN"
-                                + " transaction T ON p.id = t.product_id JOIN"
+                                + " transaction T ON p.id = t.product_id JOIN "
                                 + "customer C ON t.customer_id = c.id\n"
                                 + "WHERE t.product_id = p.id and\n"
                                 + "	t.customer_id = c.id and\n"
                                 + "     t.type = false and"
-                                + "     customer.id = :ID")
+                                + "     c.id = :ID")
                                 .addEntity(Product.class)
                                 .setLong("ID", customer.getId())
                                 .list();  
