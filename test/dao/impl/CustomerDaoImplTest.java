@@ -118,6 +118,8 @@ public class CustomerDaoImplTest
     public void testSaveNonExisten() throws Exception {
         System.out.println("testSaveNonExisten");
         Customer customer = nonExisten;
+        
+        
         dao.saveCustomer(customer);
         List<Customer> c = dao.getCustomersByName(nonExisten.getName());
         assertTrue(c.contains(customer) && c.size() == 1);

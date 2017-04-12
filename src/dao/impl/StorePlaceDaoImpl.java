@@ -78,23 +78,50 @@ public class StorePlaceDaoImpl implements StorePlaceDao
     public void addStorePlace(StorePlace sp) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(sp);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.save(sp);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
         
     }
     public void editStorePlace(StorePlace sp) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(sp);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.update(sp);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
     }
-    public void removeSttorePlace(StorePlace sp) throws SQLException {
+    public void removeStorePlace(StorePlace sp) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.delete(sp);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.delete(sp);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
     }
 }

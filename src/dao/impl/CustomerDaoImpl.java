@@ -43,21 +43,33 @@ public class CustomerDaoImpl implements CustomerDao
     public void saveCustomer(Customer customer) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(customer);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.save(customer);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            session.close();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
     }
     public void removeCustomer(Customer customer) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         try {
             session.delete(customer);
+            session.getTransaction().commit();
         }
         catch (Exception e) {
+            session.getTransaction().rollback();
             throw  e;
         }
         finally {
-            session.getTransaction().commit();
+            
             session.close();
         }
     }
@@ -69,10 +81,11 @@ public class CustomerDaoImpl implements CustomerDao
             session.getTransaction().commit();
         }
         catch (Exception e) {
+            session.getTransaction().rollback();
             throw e;
         }
         finally {
-         
+            
             session.close();
         }
     }

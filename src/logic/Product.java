@@ -45,7 +45,7 @@ public class Product {
             return false;
         }
         Product c = (Product )obj;
-        return c.id == id && name.equals(c.name) 
+        return c.id.equals(id) && name.equals(c.name) 
                 && c.type.equals(type);
     }
     public int hashCode() {

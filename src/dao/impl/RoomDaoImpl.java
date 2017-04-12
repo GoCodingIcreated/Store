@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package dao.impl;
+import java.math.BigDecimal;
 import dao.RoomDao;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,6 +14,7 @@ import logic.Store;
 import logic.StorePlace;
 import org.hibernate.Session;
 import util.HibernateUtil;
+import org.hibernate.type.DoubleType;
 /**
  *
  * @author nickolas
@@ -55,7 +57,7 @@ public class RoomDaoImpl implements RoomDao
         Session session = HibernateUtil.getSessionFactory().openSession();
         Room room = (Room)session.createSQLQuery("SELECT * FROM Room WHERE id = :ID")
                 .addEntity(Room.class)
-                .setLong("ID", storePlace.getId())
+                .setLong("ID", storePlace.getRoomId())
                 .list()
                 .get(0);
         session.close();
@@ -64,35 +66,60 @@ public class RoomDaoImpl implements RoomDao
     public void addRoom(Room room) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(room);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.save(room);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
     }
     public void removeRoom(Room room) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.delete(room);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.delete(room);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
     }
     public void editRoom(Room room) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(room);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.update(room);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
     }
     public Double getFreeSpace(Room room) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Double usedSpace;
         usedSpace = (Double)session.createSQLQuery(
-                        "SELECT SUM(stored_place.count)\n" +
+                        "SELECT COALESCE(SUM(count), 0) as c\n" +
                         "FROM Stored_place\n" +
                         "WHERE room_id = :ID")
+                    .addScalar("c", DoubleType.INSTANCE)
                     .setLong("ID", room.getId())
-                    .list()
-                    .get(0);
+                    .uniqueResult();
         session.close();
-        return room.getCapacity() - usedSpace;
+        System.out.println(usedSpace);
+        return room.getCapacity() - (usedSpace);
     }
 }

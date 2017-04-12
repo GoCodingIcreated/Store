@@ -14,10 +14,27 @@ public class Room {
     private Long id;
     private Long storeId;
     private Integer number;
-    private Integer capacity;
+    private Double capacity;
     private Set storePlaces = new HashSet();
     public Room() {
         
+    }
+    public Room(Long id, Long storeId, int number, double capacity) {
+        this.id = id;
+        this.storeId = storeId;
+        this.number = number;
+        this.capacity = capacity;
+    }
+    public int hashCode() {
+        return (int)(long)id;
+    }
+    public boolean equals(Object obj) {
+        if (obj.getClass() != Room.class) {
+            return false;
+        }
+        Room r = (Room) obj;
+        return id.equals(r.id) &&
+                storeId.equals(r.storeId);
     }
     public Set getStorePlaces() {
         return storePlaces;
@@ -40,13 +57,13 @@ public class Room {
     public Integer getNumber() {
         return number;
     }
-    public Integer getCapacity() {
+    public Double getCapacity() {
         return capacity;
     }
     public void setNumber(Integer number) {
         this.number = number;
     }
-    public void setCapacity(Integer capacity) {
+    public void setCapacity(Double capacity) {
         this.capacity = capacity;
     }
 }

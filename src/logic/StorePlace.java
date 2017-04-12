@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package logic;
+import java.sql.Timestamp;
 
 /**
  *
@@ -14,9 +15,28 @@ public class StorePlace {
     private Long roomId;
     private Long productId;
     private Integer count;
-    private String timeArrived;
+    private Timestamp timeArrived;
     public StorePlace() {
         
+    }
+    public StorePlace(Long id, Long roomId, Long productId, int count) {
+        this.id = id;
+        this.roomId = roomId;
+        this.productId = productId;
+        this.count = count;
+        this.timeArrived = new Timestamp(System.currentTimeMillis());
+    }
+    public boolean equals(Object obj) {
+        if (obj.getClass() != StorePlace.class) {
+            return false;
+        }
+        StorePlace sp = (StorePlace) obj;
+        return sp.id.equals(id) && sp.count.equals(count)
+                && sp.roomId.equals(roomId)
+                && productId.equals(sp.productId);
+    }
+    public int hashCode() {
+        return (int)(long)id;
     }
     public Long getId() {
         return id;
@@ -37,10 +57,10 @@ public class StorePlace {
         this.roomId = id; 
     }
     
-    public String getTimeArrived() {
+    public Timestamp getTimeArrived() {
         return timeArrived;
     }
-    public void setTimeArrived(String time) {
+    public void setTimeArrived(Timestamp time) {
         this.timeArrived = time;
     }
     public Integer getCount() {

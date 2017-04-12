@@ -31,7 +31,7 @@ public class TransactionDaoImpl implements TransactionDao
             throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
                                     + "WHERE customer_id = :ID")
                                     .addEntity(Transaction.class)
                                     .setLong("ID", customer.getId())
@@ -43,7 +43,7 @@ public class TransactionDaoImpl implements TransactionDao
             throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
                                     + "WHERE product_id = :ID")
                                     .addEntity(Transaction.class)
                                     .setLong("ID", product.getId())
@@ -54,7 +54,7 @@ public class TransactionDaoImpl implements TransactionDao
     public List<Transaction> getAllPurchases() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
                                     + "WHERE type = true")
                                     .addEntity(Transaction.class)
                                     .list();
@@ -64,7 +64,7 @@ public class TransactionDaoImpl implements TransactionDao
     public List<Transaction> getAllSales() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
                                     + "WHERE type = false")
                                     .addEntity(Transaction.class)
                                     .list();
@@ -75,8 +75,8 @@ public class TransactionDaoImpl implements TransactionDao
             throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
-                                    + "WHERE customer_id = :ID AND"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
+                                    + "WHERE customer_id = :ID AND "
                                     + "type = true")
                                     .addEntity(Transaction.class)
                                     .setLong("ID", customer.getId())
@@ -88,8 +88,8 @@ public class TransactionDaoImpl implements TransactionDao
             throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
-                                    + "WHERE customer_id = :ID AND"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
+                                    + "WHERE customer_id = :ID AND "
                                     + "type = false")
                                     .addEntity(Transaction.class)
                                     .setLong("ID", customer.getId())
@@ -101,8 +101,8 @@ public class TransactionDaoImpl implements TransactionDao
             throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
-                                    + "WHERE product_id = :ID AND"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
+                                    + "WHERE product_id = :ID AND "
                                     + "type = true")
                                     .addEntity(Transaction.class)
                                     .setLong("ID", product.getId())
@@ -114,8 +114,8 @@ public class TransactionDaoImpl implements TransactionDao
             throws  SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Transaction> tran;
-        tran = session.createSQLQuery("SELECT * FROM transaction"
-                                    + "WHERE product_id = :ID AND"
+        tran = session.createSQLQuery("SELECT * FROM transaction "
+                                    + "WHERE product_id = :ID AND "
                                     + "type = false")
                                     .addEntity(Transaction.class)
                                     .setLong("ID", product.getId())
@@ -126,9 +126,17 @@ public class TransactionDaoImpl implements TransactionDao
     public void addTransaction(Transaction transaction) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(transaction);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.save(transaction);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
     }
     public List<Transaction> getTransactionsBetweenDates(GregorianCalendar begin,
             GregorianCalendar end) throws SQLException {
@@ -147,5 +155,34 @@ public class TransactionDaoImpl implements TransactionDao
         session.close();
         return tran;
     }
-    
+    public void removeTransaction(Transaction transaction) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        try {
+            session.delete(transaction);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
+    public void editTransaction(Transaction transaction) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        try {
+            session.update(transaction);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            session.close();
+        }
+    }
 }

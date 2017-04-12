@@ -151,6 +151,14 @@ public class ProductDaoImplTest
         prs = dao.getAllProduct();
         assertArrayEquals(products.toArray(), prs.toArray());
     }
+    
+    
+    @Test(expected = Exception.class)
+    public void testRemoveNonExisten() throws Exception {
+        System.out.println("removeNonExisten");
+        dao.removeProduct(nonExisten);
+        fail("failed");
+    }
 
     /**
      * Test of editProduct method, of class ProductDaoImpl.

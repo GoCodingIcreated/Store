@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="nickolas-PC" name="dao.impl.ProductDaoImplTest" skipped="1" tests="9" time="2.73" timestamp="2017-04-12T04:57:07">
+<testsuite errors="10" failures="0" hostname="nickolas-PC" name="dao.impl.TransactionDaoImplTest" skipped="1" tests="13" time="2.424" timestamp="2017-04-12T04:57:18">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="RU" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dao.impl.ProductDaoImplTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\nickolas\Documents\Java_project\Store\build\test\results\TEST-dao.impl.ProductDaoImplTest.xml crashfile=C:\Users\nickolas\Documents\Java_project\Store\build\junitvmwatcher8654409990249427621.properties propsfile=C:\Users\nickolas\Documents\Java_project\Store\build\junit3623130733590747670.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dao.impl.TransactionDaoImplTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\nickolas\Documents\Java_project\Store\build\test\results\TEST-dao.impl.TransactionDaoImplTest.xml crashfile=C:\Users\nickolas\Documents\Java_project\Store\build\junitvmwatcher8694703471645984095.properties propsfile=C:\Users\nickolas\Documents\Java_project\Store\build\junit8472554054572331320.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -415,195 +415,510 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="D:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testSaveAndRemoveProduct" time="1.766" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetAllProduct" time="0.04" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsBySaler" time="0.161" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByPurcher" time="0.276" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testRemoveNonExisten" time="0.064" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testEditProduct" time="0.213" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByDate" time="0.0">
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetTransactionsByProduct" time="1.4">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getTransactionsByProduct(TransactionDaoImpl.java:50)
+	at dao.impl.TransactionDaoImplTest.testGetTransactionsByProduct(TransactionDaoImplTest.java:85)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= 1&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetSalesByProduct" time="0.103">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getSalesByProduct(TransactionDaoImpl.java:122)
+	at dao.impl.TransactionDaoImplTest.testGetSalesByProduct(TransactionDaoImplTest.java:174)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= 1 ANDtype = false&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetPurchasesByCustomer" time="0.083">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getPurchasesByCustomer(TransactionDaoImpl.java:83)
+	at dao.impl.TransactionDaoImplTest.testGetPurchasesByCustomer(TransactionDaoImplTest.java:123)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= 1 ANDtype = true&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetAllSales" time="0.076">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getAllSales(TransactionDaoImpl.java:70)
+	at dao.impl.TransactionDaoImplTest.testGetAllSales(TransactionDaoImplTest.java:111)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= false&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testEditTransaction" time="0.122">
+    <error message="could not execute statement" type="org.hibernate.exception.ConstraintViolationException">org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:72)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:190)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:62)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3124)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3587)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:103)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:453)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:345)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:350)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:56)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1218)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:421)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:177)
+	at dao.impl.TransactionDaoImpl.addTransaction(TransactionDaoImpl.java:131)
+	at dao.impl.TransactionDaoImplTest.testEditTransaction(TransactionDaoImplTest.java:210)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;date&apos; cannot be null
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1040)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:187)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetPurchasesByProduct" time="0.005">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getPurchasesByProduct(TransactionDaoImpl.java:109)
+	at dao.impl.TransactionDaoImplTest.testGetPurchasesByProduct(TransactionDaoImplTest.java:160)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= 1 ANDtype = true&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetAllTransactions" time="0.053" />
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetAllPurchases" time="0.003">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getAllPurchases(TransactionDaoImpl.java:60)
+	at dao.impl.TransactionDaoImplTest.testGetAllPurchases(TransactionDaoImplTest.java:102)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= true&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetTransactionsByCustomer" time="0.252">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getTransactionsByCustomer(TransactionDaoImpl.java:38)
+	at dao.impl.TransactionDaoImplTest.testGetTransactionsByCustomer(TransactionDaoImplTest.java:66)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= 1&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetSalesByCustomer" time="0.11">
+    <error message="could not extract ResultSet" type="org.hibernate.exception.SQLGrammarException">org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:89)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2065)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1862)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+	at org.hibernate.loader.Loader.list(Loader.java:2362)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:353)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1869)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:311)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:141)
+	at dao.impl.TransactionDaoImpl.getSalesByCustomer(TransactionDaoImpl.java:96)
+	at dao.impl.TransactionDaoImplTest.testGetSalesByCustomer(TransactionDaoImplTest.java:140)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &apos;= 1 ANDtype = false&apos; at line 1
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1053)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2322)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:80)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testGetTransactionsBetweenDates" time="0.0">
     <skipped />
   </testcase>
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByName" time="0.018" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByType" time="0.098" />
-  <system-out><![CDATA[saveProduct
-Hibernate: select max(id) from Product
-Hibernate: insert into Product (name, timestore, type, about, id) values (?, ?, ?, ?, ?)
-Hibernate: select this_.id as id1_1_0_, this_.name as name2_1_0_, this_.timestore as timestor3_1_0_, this_.type as type4_1_0_, this_.about as about5_1_0_ from Product this_
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: delete from Product where id=?
-Hibernate: select this_.id as id1_1_0_, this_.name as name2_1_0_, this_.timestore as timestor3_1_0_, this_.type as type4_1_0_, this_.about as about5_1_0_ from Product this_
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-getAllProduct
-Hibernate: select this_.id as id1_1_0_, this_.name as name2_1_0_, this_.timestore as timestor3_1_0_, this_.type as type4_1_0_, this_.about as about5_1_0_ from Product this_
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-1productname1food
-2productname2food
-3productname3computer
-1productname1food
-2productname2food
-3productname3computer
-getProductsBySaler
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = false and     c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = false and     c.id = ?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = false and     c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-getProductsByPurcher
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN  transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = true and      c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN  transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = true and      c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN  transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = true and      c.id = ?
-removeNonExisten
-Hibernate: update Transaction set product_id=null where product_id=?
-Hibernate: update Stored_place set product_id=null where product_id=?
-Hibernate: delete from Product where id=?
-editProduct
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: update Product set name=?, timestore=?, type=?, about=? where id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: update Product set name=?, timestore=?, type=?, about=? where id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-getProductsByName
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-getProductsByType
-Hibernate: SELECT * FROM product WHERE type = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE type = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE type = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testAddTransaction" time="0.127">
+    <error message="could not execute statement" type="org.hibernate.exception.ConstraintViolationException">org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:72)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:190)
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:62)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3124)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3587)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:103)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:453)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:345)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:350)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:56)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1218)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:421)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:177)
+	at dao.impl.TransactionDaoImpl.addTransaction(TransactionDaoImpl.java:131)
+	at dao.impl.TransactionDaoImplTest.testAddTransaction(TransactionDaoImplTest.java:186)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column &apos;date&apos; cannot be null
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1040)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2794)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:187)
+</error>
+  </testcase>
+  <testcase classname="dao.impl.TransactionDaoImplTest" name="testRemoveTransaction" time="0.009" />
+  <system-out><![CDATA[getTransactionsByProduct
+Hibernate: SELECT * FROM transactionWHERE product_id = ?
+getSalesByProduct
+Hibernate: SELECT * FROM transactionWHERE product_id = ? ANDtype = false
+getPurchasesByCustomer
+Hibernate: SELECT * FROM transactionWHERE customer_id = ? ANDtype = true
+getAllSales
+Hibernate: SELECT * FROM transactionWHERE type = false
+editTransaction
+Hibernate: select max(id) from Transaction
+Hibernate: insert into Transaction (product_id, customer_id, type, count, date, id) values (?, ?, ?, ?, ?, ?)
+getPurchasesByProduct
+Hibernate: SELECT * FROM transactionWHERE product_id = ? ANDtype = true
+getAllTransaction
+Hibernate: select this_.id as id1_5_0_, this_.product_id as product_2_5_0_, this_.customer_id as customer3_5_0_, this_.type as type4_5_0_, this_.count as count5_5_0_, this_.date as date6_5_0_ from Transaction this_
+getAllPurchases
+Hibernate: SELECT * FROM transactionWHERE type = true
+getTransactionsByCustomer
+Hibernate: SELECT * FROM transactionWHERE customer_id = ?
+getSalesByCustomer
+Hibernate: SELECT * FROM transactionWHERE customer_id = ? ANDtype = false
+addTransaction
+Hibernate: insert into Transaction (product_id, customer_id, type, count, date, id) values (?, ?, ?, ?, ?, ?)
+removeTransaction
+Hibernate: delete from Transaction where id=?
 ]]></system-out>
-  <system-err><![CDATA[апр 12, 2017 7:57:07 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+  <system-err><![CDATA[апр 12, 2017 7:57:18 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-апр 12, 2017 7:57:07 AM org.hibernate.Version logVersion
+апр 12, 2017 7:57:18 AM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.3.1.Final}
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Environment <clinit>
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Environment buildBytecodeProvider
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration configure
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration getConfigurationInputStream
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Customer.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Product.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Room.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Store.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/StorePlace.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Transaction.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:18 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration doConfigure
+апр 12, 2017 7:57:18 AM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=root, password=****}
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 1 (min=1)
-апр 12, 2017 7:57:08 AM org.hibernate.dialect.Dialect <init>
+апр 12, 2017 7:57:19 AM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-апр 12, 2017 7:57:08 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+апр 12, 2017 7:57:19 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-апр 12, 2017 7:57:08 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+апр 12, 2017 7:57:19 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
 INFO: HHH000397: Using ASTQueryTranslatorFactory
-апр 12, 2017 7:57:10 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:19 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 ANDtype = false' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 ANDtype = true' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= false' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1048, SQLState: 23000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: Column 'date' cannot be null
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
+INFO: HHH000010: On release of batch it still contained JDBC statements
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 ANDtype = true' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= true' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1064, SQLState: 42000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= 1 ANDtype = false' at line 1
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+WARN: SQL Error: 1048, SQLState: 23000
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.spi.SqlExceptionHelper logExceptions
+ERROR: Column 'date' cannot be null
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
+INFO: HHH000010: On release of batch it still contained JDBC statements
+апр 12, 2017 7:57:20 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
 INFO: HHH000010: On release of batch it still contained JDBC statements
 ]]></system-err>
 </testsuite>

@@ -10,6 +10,7 @@ import java.util.List;
 import logic.Room;
 import logic.Store;
 import org.hibernate.Session;
+import org.hibernate.type.DoubleType;
 import util.HibernateUtil;
 /**
  *
@@ -31,7 +32,7 @@ public class StoreDaoImpl implements StoreDao
                             + " FROM Store"
                             + " WHERE id = :ID")
                             .addEntity(Store.class)
-                            .setLong("ID", room.getId())
+                            .setLong("ID", room.getStoreId())
                             .list();
         session.close();
         return stores;
@@ -39,7 +40,7 @@ public class StoreDaoImpl implements StoreDao
     public Double getCapacityByStore(Store store) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Double capacity;
-        capacity = (Double)session.createSQLQuery("SELECT SUM(capacity)\n" +
+        capacity = (Double)session.createSQLQuery("SELECT COALESCE(SUM(capacity), 0)\n" +
                                 "FROM Room\n" +
                                 "WHERE store_id = :ID")
                         .setLong("ID", store.getId())
@@ -52,24 +53,24 @@ public class StoreDaoImpl implements StoreDao
         Session session = HibernateUtil.getSessionFactory().openSession();
         Double capacity, usedSpace;
         capacity = getCapacityByStore(store);
-        usedSpace = (Double)session.createSQLQuery("SELECT SUM(count)\n"
+        usedSpace = (Double)session.createSQLQuery("SELECT COALESCE(SUM(count), 0) as c\n"
                             + "FROM Stored_place JOIN Room "
                             + "ON Stored_place.room_id = Room.id JOIN Store"
                             + " ON Store.id = Room.store_id\n" 
                             + "WHERE Store.id = :ID")
+                        .addScalar("c", DoubleType.INSTANCE)
                         .setLong("ID", store.getId())
-                        .list()
-                        .get(0);
+                        .uniqueResult();
         session.close();
         return capacity - usedSpace;
     }
     public Double getTotalCapacity() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Double totalCapacity;
-        totalCapacity = (Double)session.createSQLQuery("SELECT SUM(capacity)\n"
+        totalCapacity = (Double)session.createSQLQuery("SELECT COALESCE(SUM(capacity), 0) as c\n"
                                 + "FROM Room")                           
-                            .list()
-                            .get(0);
+                        .addScalar("c", DoubleType.INSTANCE)
+                        .uniqueResult();
         session.close();
         return totalCapacity;
     }
@@ -77,11 +78,59 @@ public class StoreDaoImpl implements StoreDao
         Session session = HibernateUtil.getSessionFactory().openSession();
         Double totalUsed, totalCapacity;
         totalCapacity = getTotalCapacity();
-        totalUsed = (Double)session.createSQLQuery("SELECT SUM(count)\n"
+        totalUsed = (Double)session.createSQLQuery("SELECT COALESCE(SUM(count), 0) as c\n"
                                 + "FROM Stored_place")
-                            .list()
-                            .get(0);
+                        .addScalar("c", DoubleType.INSTANCE)
+                        .uniqueResult();
         session.close();
         return totalCapacity - totalUsed;
+    }
+    public void addStore(Store store) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        try {
+            session.save(store);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
+    }
+    public void removeStore(Store store) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        try {
+            session.delete(store);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
+    }
+    public void editStore(Store store) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        try {
+            session.update(store);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
     }
 }

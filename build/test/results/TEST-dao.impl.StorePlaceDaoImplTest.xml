@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="nickolas-PC" name="dao.impl.ProductDaoImplTest" skipped="1" tests="9" time="2.73" timestamp="2017-04-12T04:57:07">
+<testsuite errors="0" failures="0" hostname="nickolas-PC" name="dao.impl.StorePlaceDaoImplTest" skipped="1" tests="7" time="1.923" timestamp="2017-04-12T04:57:16">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="RU" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dao.impl.ProductDaoImplTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\nickolas\Documents\Java_project\Store\build\test\results\TEST-dao.impl.ProductDaoImplTest.xml crashfile=C:\Users\nickolas\Documents\Java_project\Store\build\junitvmwatcher8654409990249427621.properties propsfile=C:\Users\nickolas\Documents\Java_project\Store\build\junit3623130733590747670.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dao.impl.StorePlaceDaoImplTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\nickolas\Documents\Java_project\Store\build\test\results\TEST-dao.impl.StorePlaceDaoImplTest.xml crashfile=C:\Users\nickolas\Documents\Java_project\Store\build\junitvmwatcher5908459688144702780.properties propsfile=C:\Users\nickolas\Documents\Java_project\Store\build\junit3505677072418719329.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -415,195 +415,99 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="D:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testSaveAndRemoveProduct" time="1.766" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetAllProduct" time="0.04" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsBySaler" time="0.161" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByPurcher" time="0.276" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testRemoveNonExisten" time="0.064" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testEditProduct" time="0.213" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByDate" time="0.0">
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testGetAllStorePlaces" time="1.418" />
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testAddAndRemoveStorePlace" time="0.281" />
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testGetStorePlacesByProduct" time="0.031" />
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testGetStorePlacesByStore" time="0.009" />
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testEditStorePlace" time="0.103" />
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testGetStorePlacesByDate" time="0.0">
     <skipped />
   </testcase>
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByName" time="0.018" />
-  <testcase classname="dao.impl.ProductDaoImplTest" name="testGetProductsByType" time="0.098" />
-  <system-out><![CDATA[saveProduct
-Hibernate: select max(id) from Product
-Hibernate: insert into Product (name, timestore, type, about, id) values (?, ?, ?, ?, ?)
-Hibernate: select this_.id as id1_1_0_, this_.name as name2_1_0_, this_.timestore as timestor3_1_0_, this_.type as type4_1_0_, this_.about as about5_1_0_ from Product this_
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: delete from Product where id=?
-Hibernate: select this_.id as id1_1_0_, this_.name as name2_1_0_, this_.timestore as timestor3_1_0_, this_.type as type4_1_0_, this_.about as about5_1_0_ from Product this_
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-getAllProduct
-Hibernate: select this_.id as id1_1_0_, this_.name as name2_1_0_, this_.timestore as timestor3_1_0_, this_.type as type4_1_0_, this_.about as about5_1_0_ from Product this_
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-1productname1food
-2productname2food
-3productname3computer
-1productname1food
-2productname2food
-3productname3computer
-getProductsBySaler
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = false and     c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = false and     c.id = ?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = false and     c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-getProductsByPurcher
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN  transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = true and      c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN  transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = true and      c.id = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT p.id, p.name, p.timestore, p.type, p.about
-FROM Product P JOIN  transaction T ON p.id = t.product_id JOIN customer C ON t.customer_id = c.id
-WHERE t.product_id = p.id and
-	t.customer_id = c.id and
-     t.type = true and      c.id = ?
-removeNonExisten
-Hibernate: update Transaction set product_id=null where product_id=?
-Hibernate: update Stored_place set product_id=null where product_id=?
-Hibernate: delete from Product where id=?
-editProduct
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: update Product set name=?, timestore=?, type=?, about=? where id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: update Product set name=?, timestore=?, type=?, about=? where id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-getProductsByName
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
-getProductsByType
-Hibernate: SELECT * FROM product WHERE type = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE type = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE type = ?
-Hibernate: select storeplace0_.product_id as product_2_1_0_, storeplace0_.id as id1_4_0_, storeplace0_.id as id1_4_1_, storeplace0_.product_id as product_2_4_1_, storeplace0_.room_id as room_id3_4_1_, storeplace0_.count as count4_4_1_, storeplace0_.time_arrived as time_arr5_4_1_ from Stored_place storeplace0_ where storeplace0_.product_id=?
-Hibernate: select transactio0_.product_id as product_2_1_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.product_id=?
-Hibernate: SELECT * FROM product WHERE name = ?
+  <testcase classname="dao.impl.StorePlaceDaoImplTest" name="testGetStorePlacesByRoom" time="0.004" />
+  <system-out><![CDATA[getAllStorePlaces
+Hibernate: select this_.id as id1_4_0_, this_.product_id as product_2_4_0_, this_.room_id as room_id3_4_0_, this_.count as count4_4_0_, this_.time_arrived as time_arr5_4_0_ from Stored_place this_
+addStorePlace
+Hibernate: select max(id) from Stored_place
+Hibernate: insert into Stored_place (product_id, room_id, count, time_arrived, id) values (?, ?, ?, ?, ?)
+Hibernate: select this_.id as id1_4_0_, this_.product_id as product_2_4_0_, this_.room_id as room_id3_4_0_, this_.count as count4_4_0_, this_.time_arrived as time_arr5_4_0_ from Stored_place this_
+Hibernate: delete from Stored_place where id=?
+Hibernate: select this_.id as id1_4_0_, this_.product_id as product_2_4_0_, this_.room_id as room_id3_4_0_, this_.count as count4_4_0_, this_.time_arrived as time_arr5_4_0_ from Stored_place this_
+getStorePlacesByProduct
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+getStorePlacesByStore
+Hibernate: SELECT stored_place.* FROM stored_place JOIN Room ON stored_place.room_id = room.id WHERE room.store_id = ?
+Hibernate: SELECT stored_place.* FROM stored_place JOIN Room ON stored_place.room_id = room.id WHERE room.store_id = ?
+editStorePlace
+Hibernate: select this_.id as id1_4_0_, this_.product_id as product_2_4_0_, this_.room_id as room_id3_4_0_, this_.count as count4_4_0_, this_.time_arrived as time_arr5_4_0_ from Stored_place this_
+Hibernate: update Stored_place set product_id=?, room_id=?, count=?, time_arrived=? where id=?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+Hibernate: update Stored_place set product_id=?, room_id=?, count=?, time_arrived=? where id=?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+Hibernate: SELECT * FROM stored_place WHERE product_id = ?
+getStorePlacesByRoom
+Hibernate: SELECT * FROM stored_place WHERE room_id = ?
+Hibernate: SELECT * FROM stored_place WHERE room_id = ?
+Hibernate: SELECT * FROM stored_place WHERE room_id = ?
 ]]></system-out>
-  <system-err><![CDATA[апр 12, 2017 7:57:07 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+  <system-err><![CDATA[апр 12, 2017 7:57:16 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-апр 12, 2017 7:57:07 AM org.hibernate.Version logVersion
+апр 12, 2017 7:57:16 AM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.3.1.Final}
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Environment <clinit>
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Environment buildBytecodeProvider
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration configure
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration getConfigurationInputStream
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Customer.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Product.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Room.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Store.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/StorePlace.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Transaction.hbm.xml
-апр 12, 2017 7:57:08 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:16 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 12, 2017 7:57:08 AM org.hibernate.cfg.Configuration doConfigure
+апр 12, 2017 7:57:16 AM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+апр 12, 2017 7:57:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=root, password=****}
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-апр 12, 2017 7:57:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+апр 12, 2017 7:57:16 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 1 (min=1)
-апр 12, 2017 7:57:08 AM org.hibernate.dialect.Dialect <init>
+апр 12, 2017 7:57:17 AM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-апр 12, 2017 7:57:08 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+апр 12, 2017 7:57:17 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-апр 12, 2017 7:57:08 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+апр 12, 2017 7:57:17 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
 INFO: HHH000397: Using ASTQueryTranslatorFactory
-апр 12, 2017 7:57:10 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
-INFO: HHH000010: On release of batch it still contained JDBC statements
 ]]></system-err>
 </testsuite>

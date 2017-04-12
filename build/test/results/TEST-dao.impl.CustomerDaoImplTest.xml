@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="nickolas-PC" name="dao.impl.CustomerDaoImplTest" skipped="0" tests="9" time="8.108" timestamp="2017-04-09T15:56:15">
+<testsuite errors="0" failures="0" hostname="nickolas-PC" name="dao.impl.CustomerDaoImplTest" skipped="0" tests="9" time="2.547" timestamp="2017-04-12T04:57:04">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="RU" />
@@ -59,7 +59,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dao.impl.CustomerDaoImplTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\nickolas\Documents\Java_project\Store\build\test\results\TEST-dao.impl.CustomerDaoImplTest.xml crashfile=C:\Users\nickolas\Documents\Java_project\Store\build\junitvmwatcher1905154324531150775.properties propsfile=C:\Users\nickolas\Documents\Java_project\Store\build\junit1774788118105008617.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner dao.impl.CustomerDaoImplTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\nickolas\Documents\Java_project\Store\build\test\results\TEST-dao.impl.CustomerDaoImplTest.xml crashfile=C:\Users\nickolas\Documents\Java_project\Store\build\junitvmwatcher1501905804254791120.properties propsfile=C:\Users\nickolas\Documents\Java_project\Store\build\junit7120362231978509686.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -415,15 +415,15 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="D:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testGetCustomersByName" time="5.247" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testSaveExisten" time="0.847" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testGetAllCustomers" time="0.015" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testRemoveNonExisten" time="0.154" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testEditExisten" time="0.336" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testGetCustomersByName" time="1.499" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testSaveExisten" time="0.25" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testGetAllCustomers" time="0.076" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testRemoveNonExisten" time="0.005" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testEditExisten" time="0.221" />
   <testcase classname="dao.impl.CustomerDaoImplTest" name="testEditNonExist" time="0.004" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testSaveNonExisten" time="0.608" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testSameNames" time="0.182" />
-  <testcase classname="dao.impl.CustomerDaoImplTest" name="testRemoveExisten" time="0.117" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testSaveNonExisten" time="0.124" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testSameNames" time="0.14" />
+  <testcase classname="dao.impl.CustomerDaoImplTest" name="testRemoveExisten" time="0.154" />
   <system-out><![CDATA[getCustomersByName
 Hibernate: SELECT * FROM Customer WHERE name = ?
 Hibernate: select transactio0_.customer_id as customer3_0_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.customer_id=?
@@ -536,63 +536,65 @@ Hibernate: select transactio0_.customer_id as customer3_0_0_, transactio0_.id as
 Hibernate: SELECT * FROM Customer WHERE name = ?
 Hibernate: select transactio0_.customer_id as customer3_0_0_, transactio0_.id as id1_5_0_, transactio0_.id as id1_5_1_, transactio0_.product_id as product_2_5_1_, transactio0_.customer_id as customer3_5_1_, transactio0_.type as type4_5_1_, transactio0_.count as count5_5_1_, transactio0_.date as date6_5_1_ from Transaction transactio0_ where transactio0_.customer_id=?
 ]]></system-out>
-  <system-err><![CDATA[апр 09, 2017 6:56:15 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+  <system-err><![CDATA[апр 12, 2017 7:57:04 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-апр 09, 2017 6:56:15 PM org.hibernate.Version logVersion
+апр 12, 2017 7:57:04 AM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {4.3.1.Final}
-апр 09, 2017 6:56:15 PM org.hibernate.cfg.Environment <clinit>
+апр 12, 2017 7:57:04 AM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-апр 09, 2017 6:56:15 PM org.hibernate.cfg.Environment buildBytecodeProvider
+апр 12, 2017 7:57:04 AM org.hibernate.cfg.Environment buildBytecodeProvider
 INFO: HHH000021: Bytecode provider name : javassist
-апр 09, 2017 6:56:15 PM org.hibernate.cfg.Configuration configure
+апр 12, 2017 7:57:04 AM org.hibernate.cfg.Configuration configure
 INFO: HHH000043: Configuring from resource: /hibernate.cfg.xml
-апр 09, 2017 6:56:15 PM org.hibernate.cfg.Configuration getConfigurationInputStream
+апр 12, 2017 7:57:04 AM org.hibernate.cfg.Configuration getConfigurationInputStream
 INFO: HHH000040: Configuration resource: /hibernate.cfg.xml
-апр 09, 2017 6:56:15 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:04 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:15 PM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Customer.hbm.xml
-апр 09, 2017 6:56:16 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:05 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:16 PM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Product.hbm.xml
-апр 09, 2017 6:56:16 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:05 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:16 PM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Room.hbm.xml
-апр 09, 2017 6:56:16 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:05 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:16 PM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Store.hbm.xml
-апр 09, 2017 6:56:16 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:05 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:16 PM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/StorePlace.hbm.xml
-апр 09, 2017 6:56:16 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:05 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:16 PM org.hibernate.cfg.Configuration addResource
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration addResource
 INFO: HHH000221: Reading mappings from resource: hbms/Transaction.hbm.xml
-апр 09, 2017 6:56:16 PM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
+апр 12, 2017 7:57:05 AM org.hibernate.internal.util.xml.DTDEntityResolver resolveEntity
 WARN: HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-апр 09, 2017 6:56:16 PM org.hibernate.cfg.Configuration doConfigure
+апр 12, 2017 7:57:05 AM org.hibernate.cfg.Configuration doConfigure
 INFO: HHH000041: Configured SessionFactory: null
-апр 09, 2017 6:56:16 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+апр 12, 2017 7:57:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 09, 2017 6:56:16 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/mydb]
-апр 09, 2017 6:56:16 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000046: Connection properties: {user=root, password=****}
-апр 09, 2017 6:56:16 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+апр 12, 2017 7:57:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH000006: Autocommit mode: false
-апр 09, 2017 6:56:16 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+апр 12, 2017 7:57:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 INFO: HHH000115: Hibernate connection pool size: 1 (min=1)
-апр 09, 2017 6:56:18 PM org.hibernate.dialect.Dialect <init>
+апр 12, 2017 7:57:05 AM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-апр 09, 2017 6:56:18 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+апр 12, 2017 7:57:05 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
 INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
-апр 09, 2017 6:56:18 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+апр 12, 2017 7:57:05 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
 INFO: HHH000397: Using ASTQueryTranslatorFactory
-апр 09, 2017 6:56:22 PM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
+апр 12, 2017 7:57:06 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
+INFO: HHH000010: On release of batch it still contained JDBC statements
+апр 12, 2017 7:57:06 AM org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl release
 INFO: HHH000010: On release of batch it still contained JDBC statements
 ]]></system-err>
 </testsuite>

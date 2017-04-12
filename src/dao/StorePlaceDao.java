@@ -21,5 +21,7 @@ public interface StorePlaceDao
     public List<StorePlace>  getStorePlacesByDate(Timestamp date) throws SQLException;
     public List<StorePlace>  getStorePlacesByRoom(Room room) throws SQLException;
     public List<StorePlace>  getStorePlacesByStore(Store store) throws SQLException;
-    public addStorePlace(StorePlace) throws SQLException;
+    public void addStorePlace(StorePlace sp) throws SQLException;
+    public void editStorePlace(StorePlace sp) throws SQLException;
+    public void removeStorePlace(StorePlace sp) throws SQLException;
 }

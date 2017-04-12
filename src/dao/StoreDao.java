@@ -20,4 +20,7 @@ public interface StoreDao
     public Double getFreeSpaceByStore(Store store) throws SQLException;
     public Double getTotalCapacity() throws SQLException;
     public Double getTotalFreeSpace() throws SQLException;
+    public void addStore(Store store) throws SQLException;
+    public void removeStore(Store store) throws SQLException;
+    public void editStore(Store store) throws SQLException;
 }

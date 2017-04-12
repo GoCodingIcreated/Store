@@ -6,6 +6,7 @@
 
 
 package logic;
+import java.sql.Timestamp;
 
 /**
  *
@@ -16,11 +17,32 @@ public class Transaction {
     private Long productId;
     private Long customerId;
     private Boolean type;
-    private Integer count;
-    private String date;
+    private Double count;
+    private Timestamp date;
     
     public Transaction() {
         
+    }
+    public Transaction(Long id, Long productId, Long customerId, Boolean type, Double count) {
+        this.id = id;
+        this.productId = productId;
+        this.customerId = customerId;
+        this.type = type;
+        this.count = count;
+        date = new Timestamp(System.currentTimeMillis());
+        
+    }
+    public int hashCode() {
+        return (int)(long)id;
+    }
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != Transaction.class) {
+            return false;
+        }
+        Transaction tr = (Transaction)obj;
+        return id.equals(tr.id) && productId.equals(tr.productId) &&
+                customerId.equals(tr.customerId) && type.equals(tr.type) &&
+                count.equals(tr.count);
     }
     public Long getId() {
         return id;
@@ -40,17 +62,17 @@ public class Transaction {
     public void setCustomerId(Long id) {
         this.customerId = id; 
     }
-    public void setDate(String date) {
+    public void setDate(Timestamp date) {
         this.date = date;
     }
-    public String getDate() {
+    public Timestamp getDate() {
         return date;
     }
 
-    public Integer getCount() {
+    public Double getCount() {
         return count;
     }
-    public void setCount(int count) {
+    public void setCount(Double count) {
         this.count = count;
     }
     public Boolean getType() {

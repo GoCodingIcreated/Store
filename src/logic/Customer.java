@@ -34,7 +34,7 @@ public class Customer {
     }
     public boolean equals(Object obj) {
         Customer c = (Customer )obj;
-        return c.id == id && name.equals(c.name) 
+        return c.id.equals(id) && name.equals(c.name) 
                 && c.phone.equals(phone) && c.adres.equals(adres);
     }
     public int hashCode() {

@@ -14,7 +14,7 @@ and open the template in the editor.
     <property column="product_id" name="productId" type="java.lang.Long"/>
     <property column="room_id" name="roomId" type="java.lang.Long"/>
     <property column="count" name="count" type="java.lang.Integer"/>
-    <property column="time_arrived" name="timeArrived" type="java.lang.String"/>
+    <property column="time_arrived" name="timeArrived" type="java.sql.Timestamp"/>
     
   </class>
 </hibernate-mapping>

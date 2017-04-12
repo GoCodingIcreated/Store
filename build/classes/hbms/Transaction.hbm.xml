@@ -14,8 +14,8 @@ and open the template in the editor.
     <property column="product_id" name="productId" type="java.lang.Long"/>
     <property column="customer_id" name="customerId" type="java.lang.Long"/>
     <property column="type" name="type" type="java.lang.Boolean"/>
-    <property column="count" name="count" type="java.lang.Integer"/>
-    <property column="date" name="date" type="java.lang.String"/>
+    <property column="count" name="count" type="java.lang.Double"/>
+    <property column="date" name="date" type="java.sql.Timestamp"/>
     
     
   </class>

@@ -76,9 +76,15 @@ public class ProductDaoImpl implements ProductDao
         Session session;
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.save(product);
-        session.getTransaction().commit();
-        if (session != null && session.isOpen()) {
+        try {
+            session.save(product);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
             session.close();
         }
     }
@@ -86,9 +92,16 @@ public class ProductDaoImpl implements ProductDao
         Session session = null;
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.delete(product);
-        session.getTransaction().commit();
-        if (session != null && session.isOpen()) {
+        try {
+            session.delete(product);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
             session.close();
         }
     }
@@ -96,9 +109,18 @@ public class ProductDaoImpl implements ProductDao
         Session session;
         session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        session.update(product);
-        session.getTransaction().commit();
-        session.close();
+        try {
+            session.update(product);
+            session.getTransaction().commit();
+        }
+        catch (Exception e) {
+            session.getTransaction().rollback();
+            throw e;
+        }
+        finally {
+            
+            session.close();
+        }
     }
     public List<Product> getProductsByPurcher(Customer customer) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();

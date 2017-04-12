@@ -13,7 +13,7 @@ and open the template in the editor.
     </id>
     <property column="store_id" name="storeId" type="java.lang.Long"/>
     <property column="number" name="number" type="java.lang.Integer"/>
-    <property column="capacity" name="capacity" type="java.lang.Integer"/>
+    <property column="capacity" name="capacity" type="java.lang.Double"/>
     <set name="storePlaces" lazy="false">
         <key column="room_id"/>
         <one-to-many class="logic.StorePlace"/>

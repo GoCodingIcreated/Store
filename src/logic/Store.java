@@ -18,6 +18,20 @@ public class Store {
     public Store() {
         
     }
+    public Store(Long id, String adres) {
+        this.id = id;
+        this.adres = adres;
+    }
+    public int hashCode() {
+        return (int)(long)id;
+    }
+    public boolean equals(Object obj) {
+        if (obj == null || obj.getClass() != Store.class) {
+            return false;
+        }
+        Store st = (Store)obj;
+        return id.equals(st.id) && adres.equals(st.adres);
+    }
     public Set getRooms() {
         return rooms;
     }
