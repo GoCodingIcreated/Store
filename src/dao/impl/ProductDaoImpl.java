@@ -61,15 +61,15 @@ public class ProductDaoImpl implements ProductDao
         List<Product> products;
         Session session;
         session = HibernateUtil.getSessionFactory().openSession();
-        System.out.println(date.toString());
+        
         products = session.createSQLQuery(
                             "SELECT * FROM product WHERE timestore = :TIME")
                             .addEntity(Product.class)
                             .setString("TIME", date.toString())
                             .list();
-        if (session != null && session.isOpen()) {
-            session.close();
-        }
+        
+        session.close();
+        
         return products;
     }
     public void saveProduct(Product product) throws SQLException {

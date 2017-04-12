@@ -142,8 +142,7 @@ public class TransactionDaoImpl implements TransactionDao
             GregorianCalendar end) throws SQLException {
         List<Transaction> tran;
         Session session = HibernateUtil.getSessionFactory().openSession();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println("!" + df.format(begin.getTime()) + df.format(end.getTime()));
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");        
         tran = session.createSQLQuery("SELECT *\n" 
                     + "FROM transaction\n"
                     + "WHERE transaction.date >= :BEGIN AND\n"
@@ -152,6 +151,7 @@ public class TransactionDaoImpl implements TransactionDao
                 .setString("BEGIN", df.format(begin.getTime()))
                 .setString("END", df.format(end.getTime()))
                 .list();
+        
         session.close();
         return tran;
     }

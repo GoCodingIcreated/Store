@@ -36,6 +36,12 @@ public class ProductDaoImplTest
         p1 = new Product(1l, "productname1", null, "food", "someabouttext");
         p2 = new Product(2l, "productname2", null, "food", "someabouttext2");
         p3 = new Product(3l, "productname3", null, "computer", "someabouttext3");
+        Timestamp time = Timestamp.valueOf("2014-01-02 00:00:00.0");
+        p1.setTimestore(time);
+        time = Timestamp.valueOf("2014-01-03 00:00:00.0");
+        p2.setTimestore(time);
+        Timestamp.valueOf("2014-01-04 00:00:00.0");
+        p3.setTimestore(time);
         products = new ArrayList();
         prs = new ArrayList();
         products.add(p1);
@@ -66,16 +72,8 @@ public class ProductDaoImplTest
     public void testGetAllProduct() throws Exception {
         System.out.println("getAllProduct");
         prs = dao.getAllProduct();
-        for (Product p : prs) {
-            System.out.println(p.getId() + p.getName() + p.getType());
-        }
-        for (Product p : products) {
-            System.out.println(p.getId() + p.getName() + p.getType());
-        }
+        
         assertArrayEquals(products.toArray(), prs.toArray());
-        for (int i = 0; i < 3; ++i) {
-            products.get(i).setTimestore(prs.get(i).getTimestore());
-        }
     }
 
     /**
@@ -115,22 +113,22 @@ public class ProductDaoImplTest
         
         prs = dao.getProductsByName(nonExisten.getType());
         assertTrue(prs.isEmpty());
-    }
+    }    
+    @Test
+
 
     /**
      * Test of getProductsByDate method, of class ProductDaoImpl.
      */
-    @Ignore
-    @Test
     public void testGetProductsByDate() throws Exception {
         System.out.println("getProductsByDate");
         for (Product p : products) {
             prs = dao.getProductsByDate(p.getTimestore());
             System.out.println(p.getTimestore());
-            System.out.println(products.get(0).getTimestore());
+            System.out.println(prs.get(0).getTimestore());
             System.out.println(prs.size());
             assertTrue(prs.size() == 1);
-            assertTrue(p.getTimestore().equals(prs.get(0)));
+            assertTrue(p.getTimestore().equals(prs.get(0).getTimestore()));
         }
         prs = dao.getProductsByDate(nonExisten.getTimestore());
         assertTrue(prs.isEmpty());

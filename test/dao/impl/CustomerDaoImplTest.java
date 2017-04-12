@@ -72,7 +72,7 @@ public class CustomerDaoImplTest
         System.out.println("getAllCustomers");     
         List<Customer> expResult = customers;
         List<Customer> result = dao.getAllCustomers();
-        System.out.println(((Customer)(result.toArray()[0])).getId());
+       
         assertArrayEquals(expResult.toArray(), result.toArray());
         
     }
@@ -158,10 +158,7 @@ public class CustomerDaoImplTest
         System.out.println("testRemoveNonExisten");
         Customer customer = nonExisten;
         dao.removeCustomer(customer);
-        List<Customer> c = dao.getAllCustomers();
-        assertFalse(c.contains(customer));
-        assertTrue(c.size() == 4);
-        assertArrayEquals(customers.toArray(), c.toArray());
+        fail("failed");
     }
     
     
@@ -216,8 +213,7 @@ public class CustomerDaoImplTest
     public void testEditNonExist() throws Exception {
         System.out.println("testEditNonExist");
         dao.editCustomer(nonExisten);
-        List<Customer> c = dao.getAllCustomers();
-        assertArrayEquals(customers.toArray(), c.toArray());
+        fail("failed");
     }
     
     

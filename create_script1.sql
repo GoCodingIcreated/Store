@@ -28,9 +28,9 @@ DROP TABLE IF EXISTS `mydb`.`Product` ;
 CREATE TABLE IF NOT EXISTS `mydb`.`Product` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NOT NULL,
-  `Timestore` TIME(6) NOT NULL,
+  `Timestore` DATETIME NOT NULL,
   `Type` VARCHAR(45) NOT NULL,
-  `About` TEXT(300) NOT NULL,
+  `About` VARCHAR(300) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Stored_place` (
   `id` INT NOT NULL,
   `room_id` INT NOT NULL,
   `product_id` INT NOT NULL,
-  `count` INT NOT NULL,
-  `time_arrived` DATE NOT NULL,
+  `count` DOUBLE NOT NULL,
+  `time_arrived` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `room_idx` (`room_id` ASC),
   INDEX `product_idx` (`product_id` ASC),
@@ -118,8 +118,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Transaction` (
   `product_id` INT NOT NULL,
   `type` TINYINT NOT NULL,
   `customer_id` INT NOT NULL,
-  `count` INT UNSIGNED NOT NULL,
-  `date` DATE NOT NULL,
+  `count` DOUBLE UNSIGNED NOT NULL,
+  `date` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `product_id_idx` (`product_id` ASC),
   INDEX `customer_idx` (`customer_id` ASC),

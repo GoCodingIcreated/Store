@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.util.List;
 import java.util.ArrayList;
 import logic.*;
+import java.util.GregorianCalendar;
 import org.junit.Ignore;
 import static org.junit.Assert.*;
 
@@ -192,10 +193,34 @@ public class TransactionDaoImplTest
         trs = dao.getAllTransactions();
         assertArrayEquals(trans.toArray(), trs.toArray());
     }
-    @Ignore
+    
+    
     @Test
     public void testGetTransactionsBetweenDates() throws Exception {
-        System.out.println("");
+        System.out.println("getTransactionsBetweenDates");
+        GregorianCalendar begin ,end;
+        begin = new GregorianCalendar(2017, 01, 27);
+        end = new GregorianCalendar(2017, 01, 28);
+        trs = dao.getTransactionsBetweenDates(begin, end);
+        
+        assertTrue(trs.size() == 3);
+        assertTrue(trs.contains(t1));
+        assertTrue(trs.contains(t2));
+        assertTrue(trs.contains(t3));
+        
+        begin = new GregorianCalendar(2017, 02, 01);
+        end = new GregorianCalendar(2017, 02, 02);
+        trs = dao.getTransactionsBetweenDates(begin, end);
+        assertTrue(trs.size() == 2);
+        assertTrue(trs.contains(t4));
+        assertTrue(trs.contains(t5));
+        
+        begin = new GregorianCalendar(2017, 01, 27);
+        end = new GregorianCalendar(2017, 0, 27);
+        trs = dao.getTransactionsBetweenDates(begin, end);
+        assertTrue(trs.isEmpty());
+        
+        
     }
     @Test(expected = Exception.class)
     public void testRemoveTransaction() throws Exception {

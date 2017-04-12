@@ -96,10 +96,25 @@ public class StorePlaceDaoImplTest
         assertTrue(sps.isEmpty());
     }
     
-    @Ignore
+    
     @Test
     public void testGetStorePlacesByDate() throws Exception {
         System.out.println("getStorePlacesByDate");
+        Timestamp date = Timestamp.valueOf("2017-02-27 00:00:00.0");
+        sps = dao.getStorePlacesByDate(date);
+        
+        assertTrue(sps.size() == 2);
+        assertTrue(sps.contains(p1));
+        assertTrue(sps.contains(p2));
+        
+        date = Timestamp.valueOf("2017-02-28 00:00:00.0");
+        sps = dao.getStorePlacesByDate(date);
+        assertTrue(sps.size() == 1);
+        assertTrue(sps.contains(p3));
+        
+        date = Timestamp.valueOf("2017-02-29 00:00:00.0");
+        sps = dao.getStorePlacesByDate(date);
+        assertTrue(sps.isEmpty());
         
     }
 

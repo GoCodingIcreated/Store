@@ -3,9 +3,9 @@
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mydb`;
-INSERT INTO `mydb`.`Product` (`id`, `Name`, `Timestore`, `Type`, `About`) VALUES (1, 'productname1', '240:00:00', 'food', 'someabouttext');
-INSERT INTO `mydb`.`Product` (`id`, `Name`, `Timestore`, `Type`, `About`) VALUES (2, 'productname2', '140:00:00', 'food', 'someabouttext2');
-INSERT INTO `mydb`.`Product` (`id`, `Name`, `Timestore`, `Type`, `About`) VALUES (3, 'productname3', '320:00:00', 'computer', 'someabouttext3');
+INSERT INTO `mydb`.`Product` (`id`, `Name`, `Timestore`, `Type`, `About`) VALUES (1, 'productname1', '2014-01-02', 'food', 'someabouttext');
+INSERT INTO `mydb`.`Product` (`id`, `Name`, `Timestore`, `Type`, `About`) VALUES (2, 'productname2', '2014-01-03', 'food', 'someabouttext2');
+INSERT INTO `mydb`.`Product` (`id`, `Name`, `Timestore`, `Type`, `About`) VALUES (3, 'productname3', '2014-01-04', 'computer', 'someabouttext3');
 
 COMMIT;
 
@@ -49,7 +49,7 @@ START TRANSACTION;
 USE `mydb`;
 INSERT INTO `mydb`.`Stored_place` (`id`, `room_id`, `product_id`, `count`, `time_arrived`) VALUES (1, 1, 1, 5, '2017-02-27');
 INSERT INTO `mydb`.`Stored_place` (`id`, `room_id`, `product_id`, `count`, `time_arrived`) VALUES (2, 1, 2, 10, '2017-02-27');
-INSERT INTO `mydb`.`Stored_place` (`id`, `room_id`, `product_id`, `count`, `time_arrived`) VALUES (3, 2, 3, 100, '2017-02-29');
+INSERT INTO `mydb`.`Stored_place` (`id`, `room_id`, `product_id`, `count`, `time_arrived`) VALUES (3, 2, 3, 100, '2017-02-28');
 
 COMMIT;
 
@@ -75,7 +75,7 @@ USE `mydb`;
 INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (1, 1, 0, 1, 10, '2017-02-27');
 INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (2, 2, 0, 1, 10, '2017-02-27');
 INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (3, 1, 1, 2, 5, '2017-02-28');
-INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (4, 3, 0, 3, 200, '2017-02-29');
-INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (5, 3, 1, 1, 100, '2017-02-29');
+INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (4, 3, 0, 3, 200, '2017-03-01');
+INSERT INTO `mydb`.`Transaction` (`id`, `product_id`, `type`, `customer_id`, `count`, `date`) VALUES (5, 3, 1, 1, 100, '2017-03-01');
 
 COMMIT;
